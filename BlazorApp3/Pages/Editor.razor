@@ -1,0 +1,63 @@
+﻿@page "/editor"
+@inject IJSRuntime JSRuntime
+
+<h1>Send Document to .NET</h1>
+
+<style>
+	
+	#txDocumentEditorContainer {
+	    width: 1100px;
+	    height: 600px;
+	    display: inline-block;
+	    position: relative;
+	}
+	
+</style>
+	
+<div id="txDocumentEditorContainer" @ref="txDocumentEditorContainer"></div>
+
+<br />
+
+<button @onclick="SaveDocument">
+	Save and Reload Document
+</button>
+
+@code
+{
+	private ElementReference txDocumentEditorContainer;
+
+	protected override async Task OnAfterRenderAsync(bool firstRender) {
+		if (firstRender) {
+			await JSRuntime.InvokeVoidAsync("addEditorToElement", txDocumentEditorContainer);
+		}
+	}
+
+	private void SaveDocument()
+	{
+		// create a .NET object and call the 'saveDocument' JS function
+		var dotNetReference = DotNetObjectReference.Create(this);
+		JSRuntime.InvokeVoidAsync("TextControl.saveDocument", dotNetReference);
+	}
+
+	[JSInvokable("ProcessDocument")]
+	public void ProcessDocument(string document)
+	{
+		byte[] bDocument;
+
+		// create a ServerTextControl instance to load the saved document
+		using (TXTextControl.ServerTextControl tx = new  TXTextControl.ServerTextControl()) {
+			tx.Create();
+			tx.Load(Convert.FromBase64String(document), TXTextControl.BinaryStreamType.InternalUnicodeFormat);
+			
+			// add additional text to the document
+			tx.Selection.Text = "This document has been modified by .NET\r\n";
+			
+			// save back
+			tx.Save(out bDocument, TXTextControl.BinaryStreamType.InternalUnicodeFormat);
+		}
+
+		// invoke the JS function 'loadDocument' to load back to the modified document
+		JSRuntime.InvokeVoidAsync("TextControl.loadDocument", bDocument);
+	}
+
+}
