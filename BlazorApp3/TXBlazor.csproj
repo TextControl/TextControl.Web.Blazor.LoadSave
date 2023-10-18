@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
-    <TargetFramework>net5.0</TargetFramework>
+    <TargetFramework>net6.0</TargetFramework>
 	  <EnableUnsafeBinaryFormatterSerialization>true</EnableUnsafeBinaryFormatterSerialization>
 	  <EnableUnsafeBinaryFormatterInDesigntimeLicenseContextSerialization>true</EnableUnsafeBinaryFormatterInDesigntimeLicenseContextSerialization>
   </PropertyGroup>
@@ -16,72 +16,48 @@
 
   <ItemGroup>
     <Reference Include="txic">
-      <HintPath>..\..\..\..\..\..\Program Files\Text Control GmbH\TX Text Control 30.0.NET Server for ASP.NET\Assembly\bin64\txic.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\Program Files\Text Control GmbH\TX Text Control 32.0.NET Server for ASP.NET\Assembly\bin64\txic.dll</HintPath>
     </Reference>
     <Reference Include="txkernel">
-      <HintPath>..\..\..\..\..\..\Program Files\Text Control GmbH\TX Text Control 30.0.NET Server for ASP.NET\Assembly\bin64\txkernel.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\Program Files\Text Control GmbH\TX Text Control 32.0.NET Server for ASP.NET\Assembly\bin64\txkernel.dll</HintPath>
     </Reference>
     <Reference Include="txpdf">
-      <HintPath>..\..\..\..\..\..\Program Files\Text Control GmbH\TX Text Control 30.0.NET Server for ASP.NET\Assembly\txpdf.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\Program Files\Text Control GmbH\TX Text Control 32.0.NET Server for ASP.NET\Assembly\txpdf.dll</HintPath>
     </Reference>
     <Reference Include="TXTextControl">
-      <HintPath>..\..\..\..\..\..\Program Files\Text Control GmbH\TX Text Control 30.0.NET Server for ASP.NET\Assembly\TXTextControl.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\Program Files\Text Control GmbH\TX Text Control 32.0.NET Server for ASP.NET\Assembly\TXTextControl.dll</HintPath>
     </Reference>
     <Reference Include="TXTextControl.Server">
-      <HintPath>..\..\..\..\..\..\Program Files\Text Control GmbH\TX Text Control 30.0.NET Server for ASP.NET\Assembly\TXTextControl.Server.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\Program Files\Text Control GmbH\TX Text Control 32.0.NET Server for ASP.NET\Assembly\TXTextControl.Server.dll</HintPath>
     </Reference>
     <Reference Include="txtools">
-      <HintPath>..\..\..\..\..\..\Program Files\Text Control GmbH\TX Text Control 30.0.NET Server for ASP.NET\Assembly\bin64\txtools.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\Program Files\Text Control GmbH\TX Text Control 32.0.NET Server for ASP.NET\Assembly\bin64\txtools.dll</HintPath>
     </Reference>
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="tx30_css.dll">
+    <None Update="tx32_css.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="tx30_doc.dll">
+    <None Update="tx32_doc.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="tx30_dox.dll">
+    <None Update="tx32_dox.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="tx30_htm.dll">
+    <None Update="tx32_htm.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="tx30_pdf.dll">
+    <None Update="tx32_pdf.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="tx30_rtf.dll">
+    <None Update="tx32_rtf.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="tx30_xlx.dll">
+    <None Update="tx32_xlx.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="tx30_xml.dll">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="tx31_css.dll">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="tx31_doc.dll">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="tx31_dox.dll">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="tx31_htm.dll">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="tx31_pdf.dll">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="tx31_rtf.dll">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="tx31_xlx.dll">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="tx31_xml.dll">
+    <None Update="tx32_xml.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
